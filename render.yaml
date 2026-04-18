@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: proximity-voice-bot
+    runtime: node
+    rootDir: bot
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: VOICE_CHANNEL_ID
+        sync: false
+      - key: API_SECRET
+        sync: false
+      - key: HEAR_DISTANCE
+        value: "80"
+      - key: PORT
+        value: "3000"
